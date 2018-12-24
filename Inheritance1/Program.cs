@@ -38,11 +38,16 @@ namespace Inheritance1
                 }
             }
 
+            double sum = 0.0;
+
             Console.WriteLine("\nTAXES PAID: ");
             foreach(TaxPayer txp in list)
             {
-                Console.WriteLine(txp.TaxPaid());
+                Console.WriteLine(txp.Name + " - $ " + txp.TaxPaid().ToString("F2", CultureInfo.InvariantCulture));
+                sum += txp.TaxPaid();
             }
+
+            Console.WriteLine("\nTOTAL TAXES: $ " + sum.ToString("F2", CultureInfo.InvariantCulture));
         }
     }
 }
